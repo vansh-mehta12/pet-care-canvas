@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { 
   Search, Plus, Dog, Cat, Filter, Heart, Calendar,
@@ -141,7 +142,7 @@ export default function Patients() {
       {/* Filters */}
       <div className="flex flex-col sm:flex-row gap-4">
         <div className="relative w-full max-w-xl">
-          <div className="flex items-center gap-4 rounded-full bg-white px-6 py-3 shadow-sm ring-1 ring-gray-200">
+          <div className="flex items-center gap-4 rounded-full bg-white px-4 py-2 shadow-sm ring-1 ring-gray-200 h-10">
             <input
               placeholder="Search patients..."
               className="flex-1 border-0 bg-transparent text-base text-gray-500 placeholder:text-gray-400 focus:outline-none focus:ring-0"
@@ -149,7 +150,7 @@ export default function Patients() {
               onChange={(e) => setSearchQuery(e.target.value)}
             />
             <div className="h-6 w-[1px] bg-gray-200" />
-            <button className="text-gray-500 hover:text-gray-600">Date Range</button>
+            <button className="text-gray-500 hover:text-gray-600 text-sm">Date Range</button>
             <Search className="h-5 w-5 text-blue-500" />
           </div>
         </div>
@@ -264,3 +265,4 @@ export default function Patients() {
     </div>
   );
 }
+
