@@ -1,10 +1,16 @@
-
 import { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { 
-  Dog, Cat, Calendar, Users, ClipboardList,
-  Home, Menu, X, Settings, LogOut
+  HomeIcon,
+  DogIcon, 
+  CalendarIcon, 
+  UsersIcon, 
+  ClipboardIcon,
+  MenuIcon, 
+  XIcon, 
+  SettingsIcon, 
+  LogOutIcon
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -33,10 +39,10 @@ export default function MainLayout() {
             onClick={toggleSidebar}
             className="mr-2 lg:hidden"
           >
-            {sidebarOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {sidebarOpen ? <XIcon className="h-5 w-5" /> : <MenuIcon className="h-5 w-5" />}
           </Button>
           <div className="flex items-center">
-            <Dog className="h-8 w-8 text-vet-purple mr-2" />
+            <DogIcon className="h-8 w-8 text-vet-purple mr-2" />
             <span className="text-xl font-bold text-vet-purple">VetCare</span>
           </div>
         </div>
@@ -62,11 +68,11 @@ export default function MainLayout() {
               </DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuItem>
-                <Settings className="mr-2 h-4 w-4" />
+                <SettingsIcon className="mr-2 h-4 w-4" />
                 <span>Settings</span>
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <LogOut className="mr-2 h-4 w-4" />
+                <LogOutIcon className="mr-2 h-4 w-4" />
                 <span>Log out</span>
               </DropdownMenuItem>
             </DropdownMenuContent>
@@ -84,11 +90,11 @@ export default function MainLayout() {
           )}
         >
           <nav className="space-y-1 flex-1">
-            <SidebarLink to="/" icon={<Home />} label="Dashboard" />
-            <SidebarLink to="/patients" icon={<Dog />} label="Patients" />
-            <SidebarLink to="/appointments" icon={<Calendar />} label="Appointments" />
-            <SidebarLink to="/clients" icon={<Users />} label="Clients" />
-            <SidebarLink to="/records" icon={<ClipboardList />} label="Medical Records" />
+            <SidebarLink to="/" icon={HomeIcon} label="Dashboard" />
+            <SidebarLink to="/patients" icon={DogIcon} label="Patients" />
+            <SidebarLink to="/appointments" icon={CalendarIcon} label="Appointments" />
+            <SidebarLink to="/clients" icon={UsersIcon} label="Clients" />
+            <SidebarLink to="/records" icon={ClipboardIcon} label="Medical Records" />
           </nav>
           
           <div className="pt-4 border-t">
@@ -122,14 +128,14 @@ export default function MainLayout() {
   );
 }
 
-// Sidebar Link Component
+// Sidebar Link Component with updated icon prop type
 function SidebarLink({ 
   to, 
-  icon, 
+  icon: Icon, 
   label 
 }: { 
   to: string; 
-  icon: React.ReactNode; 
+  icon: React.ElementType; 
   label: string;
 }) {
   return (
@@ -140,7 +146,7 @@ function SidebarLink({
         location.pathname === to ? "bg-vet-purple-light text-vet-purple-dark font-medium" : "text-gray-700"
       )}
     >
-      {icon}
+      <Icon className="w-5 h-5 stroke-[1.5]" />
       <span>{label}</span>
     </Link>
   );

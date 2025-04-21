@@ -1,5 +1,10 @@
 
-import { Dog, Cat, Calendar, Pill, Users } from "lucide-react";
+import { 
+  DogIcon, 
+  CalendarIcon, 
+  PillIcon, 
+  UsersIcon 
+} from "lucide-react";
 import { StatCard } from "@/components/Dashboard/StatCard";
 import { AppointmentList } from "@/components/Dashboard/AppointmentList";
 import { RecentPatients } from "@/components/Dashboard/RecentPatients";
@@ -130,25 +135,25 @@ export default function Dashboard() {
         <StatCard
           title="Total Patients"
           value="248"
-          icon={<Dog className="h-4 w-4" />}
+          icon={<DogIcon className="h-4 w-4 stroke-[1.5]" />}
           description="+12% from last month"
         />
         <StatCard
           title="Appointments Today"
           value="16"
-          icon={<Calendar className="h-4 w-4" />}
+          icon={<CalendarIcon className="h-4 w-4 stroke-[1.5]" />}
           description="4 completed, 10 upcoming, 2 cancelled"
         />
         <StatCard
           title="Active Treatments"
           value="32"
-          icon={<Pill className="h-4 w-4" />}
+          icon={<PillIcon className="h-4 w-4 stroke-[1.5]" />}
           description="8 due for renewal this week"
         />
         <StatCard
           title="Total Clients"
           value="187"
-          icon={<Users className="h-4 w-4" />}
+          icon={<UsersIcon className="h-4 w-4 stroke-[1.5]" />}
           description="+5 new clients this week"
         />
       </div>

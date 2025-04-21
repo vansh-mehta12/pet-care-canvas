@@ -1,4 +1,3 @@
-
 import { 
   Card, 
   CardContent, 
@@ -7,7 +6,7 @@ import {
   CardTitle 
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, Clock, MessageCircle, Pill, Syringe } from "lucide-react";
+import { CalendarIcon, ClockIcon, MessageSquareIcon, PillIcon, SyringeIcon } from "lucide-react";
 
 // Activity types
 type ActivityType = "appointment" | "reminder" | "medication" | "vaccination" | "message";
@@ -25,13 +24,13 @@ interface UpcomingActivitiesProps {
 }
 
 export function UpcomingActivities({ activities }: UpcomingActivitiesProps) {
-  // Activity type icons
+  // Activity type icons with updated outline icons
   const activityIcons: Record<ActivityType, React.ReactNode> = {
-    appointment: <Calendar className="h-4 w-4" />,
-    reminder: <Clock className="h-4 w-4" />,
-    medication: <Pill className="h-4 w-4" />,
-    vaccination: <Syringe className="h-4 w-4" />,
-    message: <MessageCircle className="h-4 w-4" />,
+    appointment: <CalendarIcon className="h-4 w-4 stroke-[1.5]" />,
+    reminder: <ClockIcon className="h-4 w-4 stroke-[1.5]" />,
+    medication: <PillIcon className="h-4 w-4 stroke-[1.5]" />,
+    vaccination: <SyringeIcon className="h-4 w-4 stroke-[1.5]" />,
+    message: <MessageSquareIcon className="h-4 w-4 stroke-[1.5]" />,
   };
 
   // Activity type colors
