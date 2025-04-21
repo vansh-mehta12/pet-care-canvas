@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -100,7 +101,7 @@
 
 @layer base {
   * {
-    @apply border-border outline-none ring-ring/50;
+    @apply border-border outline-none ring ring-ring ring-opacity-50;
   }
   body {
     @apply bg-background text-foreground font-sans antialiased;
