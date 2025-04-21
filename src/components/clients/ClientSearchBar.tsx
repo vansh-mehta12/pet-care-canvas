@@ -10,7 +10,7 @@ interface ClientSearchBarProps {
 export function ClientSearchBar({ searchQuery, setSearchQuery }: ClientSearchBarProps) {
   return (
     <div className="relative w-full max-w-xl">
-      <div className="flex items-center gap-4 rounded-full bg-white px-6 py-3 shadow-sm ring-1 ring-gray-200">
+      <div className="flex h-10 items-center gap-4 rounded-full bg-white px-6 shadow-sm ring-1 ring-gray-200">
         <input
           placeholder="Search"
           className="flex-1 border-0 bg-transparent text-base text-gray-500 placeholder:text-gray-400 focus:outline-none focus:ring-0"

@@ -135,11 +135,10 @@ export default function MedicalRecords() {
       </div>
       
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1fr_400px]">
-        {/* Records list */}
         <div className="space-y-4">
           <div className="flex flex-col sm:flex-row gap-4">
             <div className="relative grow">
-              <div className="flex items-center gap-4 rounded-full bg-white px-6 h-search-bar shadow-sm ring-1 ring-gray-200">
+              <div className="flex h-10 items-center gap-4 rounded-full bg-white px-6 shadow-sm ring-1 ring-gray-200">
                 <input
                   placeholder="Search records..."
                   className="flex-1 border-0 bg-transparent text-base text-gray-500 placeholder:text-gray-400 focus:outline-none focus:ring-0"

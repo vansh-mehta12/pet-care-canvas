@@ -141,7 +141,7 @@ export default function Patients() {
       {/* Filters */}
       <div className="flex flex-col sm:flex-row gap-4">
         <div className="relative w-full max-w-xl">
-          <div className="flex items-center gap-4 rounded-full bg-white px-4 py-2 shadow-sm ring-1 ring-gray-200 h-10">
+          <div className="flex h-10 items-center gap-4 rounded-full bg-white px-4 shadow-sm ring-1 ring-gray-200">
             <input
               placeholder="Search patients..."
               className="flex-1 border-0 bg-transparent text-base text-gray-500 placeholder:text-gray-400 focus:outline-none focus:ring-0"
