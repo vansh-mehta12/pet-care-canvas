@@ -154,11 +154,11 @@ export default function Patients() {
           </div>
         </div>
         <div className="flex gap-2">
-          <Button variant="outline" className="h-search-bar">
+          <Button variant="secondary" className="h-search-bar">
             <Filter className="mr-2 h-4 w-4" />
             Filter
           </Button>
-          <Button variant="outline" className="h-search-bar">
+          <Button variant="secondary" className="h-search-bar">
             <ArrowUpDown className="mr-2 h-4 w-4" />
             Sort
           </Button>
