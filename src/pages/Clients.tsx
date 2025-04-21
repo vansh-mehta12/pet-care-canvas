@@ -1,31 +1,11 @@
 import { useState } from "react";
-import { 
-  Search, Plus, Filter, ArrowUpDown, MoreHorizontal,
-  Mail, Phone, MapPin, FileText, User
-} from "lucide-react";
+import { Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Card, CardContent } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { 
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-import { Badge } from "@/components/ui/badge";
+import { ClientSearchBar } from "@/components/clients/ClientSearchBar";
+import { ClientTableActions } from "@/components/clients/ClientTableActions";
+import { ClientTable } from "@/components/clients/ClientTable";
 
-// Mock data
+// Mock data moved to a constant
 const clients = [
   {
     id: "1",
@@ -122,111 +102,11 @@ export default function Clients() {
       
       {/* Filters */}
       <div className="flex flex-col sm:flex-row gap-4">
-        <div className="relative grow">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-          <Input
-            placeholder="Search clients..."
-            className="pl-9"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
-        </div>
-        <div className="flex gap-2">
-          <Button variant="outline" size="sm">
-            <Filter className="mr-2 h-4 w-4" />
-            Filter
-          </Button>
-          <Button variant="outline" size="sm">
-            <ArrowUpDown className="mr-2 h-4 w-4" />
-            Sort
-          </Button>
-        </div>
+        <ClientSearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+        <ClientTableActions />
       </div>
       
-      {/* Table view */}
-      <Card>
-        <CardContent className="p-0">
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>Client</TableHead>
-                <TableHead>Contact</TableHead>
-                <TableHead>Address</TableHead>
-                <TableHead>Pets</TableHead>
-                <TableHead>Last Visit</TableHead>
-                <TableHead>Status</TableHead>
-                <TableHead className="text-right">Actions</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {filteredClients.map((client) => (
-                <TableRow key={client.id}>
-                  <TableCell>
-                    <div className="flex items-center gap-3">
-                      <Avatar className="h-9 w-9">
-                        <AvatarImage src="/placeholder.svg" alt={client.name} />
-                        <AvatarFallback>
-                          {client.name.substring(0, 2)}
-                        </AvatarFallback>
-                      </Avatar>
-                      <div className="font-medium">{client.name}</div>
-                    </div>
-                  </TableCell>
-                  <TableCell>
-                    <div className="text-sm">
-                      <div className="flex items-center gap-1">
-                        <Mail className="h-3.5 w-3.5 text-muted-foreground" />
-                        <span>{client.email}</span>
-                      </div>
-                      <div className="flex items-center gap-1 mt-1">
-                        <Phone className="h-3.5 w-3.5 text-muted-foreground" />
-                        <span>{client.phone}</span>
-                      </div>
-                    </div>
-                  </TableCell>
-                  <TableCell>
-                    <div className="flex items-center gap-1">
-                      <MapPin className="h-3.5 w-3.5 text-muted-foreground" />
-                      <span className="text-sm truncate max-w-[200px]">
-                        {client.address}
-                      </span>
-                    </div>
-                  </TableCell>
-                  <TableCell>
-                    <Badge>{client.petCount}</Badge>
-                  </TableCell>
-                  <TableCell>{client.lastVisit}</TableCell>
-                  <TableCell>
-                    <Badge
-                      variant="outline"
-                      className={
-                        client.status === "active"
-                          ? "bg-green-100 text-green-800 hover:bg-green-100"
-                          : "bg-gray-100 text-gray-800 hover:bg-gray-100"
-                      }
-                    >
-                      {client.status}
-                    </Badge>
-                  </TableCell>
-                  <TableCell className="text-right">
-                    <div className="flex justify-end gap-2">
-                      <Button variant="secondary" size="icon" className="h-8 w-8">
-                        <User className="h-4 w-4" />
-                      </Button>
-                      <Button variant="secondary" size="icon" className="h-8 w-8">
-                        <FileText className="h-4 w-4" />
-                      </Button>
-                      <Button variant="ghost" size="icon" className="h-8 w-8">
-                        <MoreHorizontal className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </CardContent>
-      </Card>
+      <ClientTable clients={filteredClients} />
     </div>
   );
 }
