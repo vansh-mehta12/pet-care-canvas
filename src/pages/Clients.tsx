@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { 
   Search, Plus, Filter, ArrowUpDown, MoreHorizontal,
@@ -211,39 +210,15 @@ export default function Clients() {
                   </TableCell>
                   <TableCell className="text-right">
                     <div className="flex justify-end gap-2">
-                      <Button variant="outline" size="icon" className="h-8 w-8">
+                      <Button variant="secondary" size="icon" className="h-8 w-8">
                         <User className="h-4 w-4" />
                       </Button>
-                      <Button variant="outline" size="icon" className="h-8 w-8">
+                      <Button variant="secondary" size="icon" className="h-8 w-8">
                         <FileText className="h-4 w-4" />
                       </Button>
-                      <DropdownMenu>
-                        <DropdownMenuTrigger asChild>
-                          <Button variant="ghost" size="icon" className="h-8 w-8">
-                            <MoreHorizontal className="h-4 w-4" />
-                          </Button>
-                        </DropdownMenuTrigger>
-                        <DropdownMenuContent align="end">
-                          <DropdownMenuLabel>Actions</DropdownMenuLabel>
-                          <DropdownMenuSeparator />
-                          <DropdownMenuItem>
-                            <Mail className="mr-2 h-4 w-4" />
-                            Email Client
-                          </DropdownMenuItem>
-                          <DropdownMenuItem>
-                            <Phone className="mr-2 h-4 w-4" />
-                            Call Client
-                          </DropdownMenuItem>
-                          <DropdownMenuItem>
-                            <User className="mr-2 h-4 w-4" />
-                            View Profile
-                          </DropdownMenuItem>
-                          <DropdownMenuSeparator />
-                          <DropdownMenuItem className="text-red-600">
-                            Archive Client
-                          </DropdownMenuItem>
-                        </DropdownMenuContent>
-                      </DropdownMenu>
+                      <Button variant="ghost" size="icon" className="h-8 w-8">
+                        <MoreHorizontal className="h-4 w-4" />
+                      </Button>
                     </div>
                   </TableCell>
                 </TableRow>
