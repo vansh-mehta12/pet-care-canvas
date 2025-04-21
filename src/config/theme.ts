@@ -19,7 +19,7 @@ export const theme = {
       sm: "calc(var(--radius) - 4px)",
     },
     fontFamily: {
-      sans: ["var(--font-sans)", ...fontFamily.sans],
+      sans: ["Sora", ...fontFamily.sans],
     },
     ...animations,
   },
