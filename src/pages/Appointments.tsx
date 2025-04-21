@@ -217,7 +217,7 @@ export default function Appointments() {
                   />
                 </PopoverContent>
               </Popover>
-              <Button variant="outline" size="sm">
+              <Button variant="outline" className="h-search-bar">
                 <Filter className="mr-2 h-4 w-4" />
                 Filter
               </Button>

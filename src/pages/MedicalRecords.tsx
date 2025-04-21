@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { 
   Search, Filter, FileText, Dog, Cat, 
@@ -152,7 +151,7 @@ export default function MedicalRecords() {
                 <Search className="h-5 w-5 text-blue-500" />
               </div>
             </div>
-            <Button variant="outline" size="sm">
+            <Button variant="outline" className="h-search-bar">
               <Filter className="mr-2 h-4 w-4" />
               Filter
             </Button>
